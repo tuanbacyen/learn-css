@@ -1,3 +1,21 @@
+.container {
+}
+
+.timer-box {
+  text-align: center;
+}
+
+.question-box {
+}
+
+.question-num {
+  color: #345c00;
+}
+
+.question {
+  font-size: 1.2rem;
+}
+
 .answer {
   padding: 10px 5px;
 }
@@ -14,10 +32,12 @@
   width: 35px;
   min-height: 35px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-right: 5px;
   background-color: #cecece;
+}
+
+.rd input[type="radio"] {
+  margin: auto;
 }
 
 .lb {
@@ -27,4 +47,37 @@
   display: flex;
   align-items: center;
   padding-left: 5px;
+  font-size: 1.3em;
+}
+
+.button-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #99ff00;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.btn-prev {
+  margin-left: 5px;
+  flex-basis: 40%;
+}
+
+.btn-next {
+  margin-right: 5px;
+  flex-basis: 40%;
+}
+
+.btn-control {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-submit {
+  margin: 0 5px;
 }
