@@ -11,55 +11,57 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="timer-box">
-      <span>
-        Thời gian còn lại :
-        <span class="time-count">60:00:00</span>
-      </span>
-    </div>
-    <div class="question-box">
-      <h1 class="question-num">Câu 1</h1>
-      <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-        $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-      </p>
+  <form action="">
+    <div class="container">
+      <div class="timer-box">
+        <span>
+          Thời gian còn lại :
+          <span class="time-count">60:00:00</span>
+        </span>
+      </div>
+      <div class="question-box">
+        <h1 class="question-num">Câu 1</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="box-answer">
+            <div class="rd">
+              <input id="radio1" type="radio" name="radio">
+            </div>
+            <label for="radio1" class="lb">1</label>
+          </div>
+          <div class="box-answer">
+            <div class="rd">
+              <input id="radio2" type="radio" name="radio">
+            </div>
+            <label for="radio2" class="lb">99</label>
+          </div>
+          <div class="box-answer">
+            <div class="rd">
+              <input id="radio3" type="radio" name="radio">
+            </div>
+            <label for="radio3" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="box-answer">
+            <div class="rd">
+              <input id="radio4" type="radio" name="radio">
+            </div>
+            <label for="radio4" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
       <hr>
-      <div class="answer">
-        <div class="box-answer">
-          <div class="rd">
-            <input id="radio1" type="radio" name="radio">
-          </div>
-          <label for="radio1" class="lb">1</label>
+      <div class="button-box">
+        <div class="btn-control">
+          <button id="btn-next" class="btn btn-prev">Câu trước</button>
+          <button id="btn-prev" class="btn btn-next">Câu tiếp</button>
         </div>
-        <div class="box-answer">
-          <div class="rd">
-            <input id="radio2" type="radio" name="radio">
-          </div>
-          <label for="radio2" class="lb">99</label>
-        </div>
-        <div class="box-answer">
-          <div class="rd">
-            <input id="radio3" type="radio" name="radio">
-          </div>
-          <label for="radio3" class="lb">\(sin(x)\)</label>
-        </div>
-        <div class="box-answer">
-          <div class="rd">
-            <input id="radio4" type="radio" name="radio">
-          </div>
-          <label for="radio4" class="lb">\(sin(x) \ne 2\)</label>
-        </div>
+        <button id="btn-prev" class="btn btn-submit">Hoàn Thành</button>
       </div>
     </div>
-    <hr>
-    <div class="button-box">
-      <div class="btn-control">
-        <button id="btn-next" class="btn btn-prev">Câu trước</button>
-        <button id="btn-prev" class="btn btn-next">Câu tiếp</button>
-      </div>
-      <button id="btn-prev" class="btn btn-submit">Hoàn Thành</button>
-    </div>
-  </div>
+  </form>
 </body>
 
 </html>
