@@ -5,63 +5,471 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="variable.js"></script>
+  <script>
+    for (var i = 1; i <= 11; i++) {
+      const key = `q${i}`;
+      LIST.push(key);
+      ANSWER[key] = null;
+    }
+    TIMER = parseInt("1") * 5;
+  </script>
   <script src="script.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <form action="">
-    <div class="container">
+  <div class="container">
+    <div class="container-start animation">
+      <h1>Math</h1>
+      <h1>Ma De</h1>
+      <table class="table-start">
+        <tr>
+          <th>
+            <h3>Số câu hỏi</h3>
+          </th>
+          <th>
+            <h3>Thời gian</h3>
+          </th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>20</td>
+        </tr>
+      </table>
+      <button id="btn-start" class="btn btn-start">Bắt đầu</button>
+    </div>
+    <div class="container-question animation box-hide">
       <div class="timer-box">
         <span>
           Thời gian còn lại :
-          <span class="time-count">60:00:00</span>
+          <span class="time-countdown">60:00</span>
         </span>
       </div>
-      <div class="question-box">
+      <div id="q1" class="question-box box-hide">
         <h1 class="question-num">Câu 1</h1>
         <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
           $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
         </p>
         <hr>
         <div class="answer">
-          <div class="box-answer">
+          <div class="answer-item">
             <div class="rd">
-              <input id="radio1" type="radio" name="radio">
+              <input id="r1a" value="A" type="radio" name="q1">
             </div>
-            <label for="radio1" class="lb">1</label>
+            <label for="r1a" class="lb">1</label>
           </div>
-          <div class="box-answer">
+          <div class="answer-item">
             <div class="rd">
-              <input id="radio2" type="radio" name="radio">
+              <input id="r1b" value="B" type="radio" name="q1">
             </div>
-            <label for="radio2" class="lb">99</label>
+            <label for="r1b" class="lb">99</label>
           </div>
-          <div class="box-answer">
+          <div class="answer-item">
             <div class="rd">
-              <input id="radio3" type="radio" name="radio">
+              <input id="r1c" value="C" type="radio" name="q1">
             </div>
-            <label for="radio3" class="lb">\(sin(x)\)</label>
+            <label for="r1c" class="lb">\(sin(x)\)</label>
           </div>
-          <div class="box-answer">
+          <div class="answer-item">
             <div class="rd">
-              <input id="radio4" type="radio" name="radio">
+              <input id="r1d" value="D" type="radio" name="q1">
             </div>
-            <label for="radio4" class="lb">\(sin(x) \ne 2\)</label>
+            <label for="r1d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q2" class="question-box box-hide">
+        <h1 class="question-num">Câu 2</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r2a" value="A" type="radio" name="q2">
+            </div>
+            <label for="r2a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r2b" value="B" type="radio" name="q2">
+            </div>
+            <label for="r2b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r2c" value="C" type="radio" name="q2">
+            </div>
+            <label for="r2c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r2d" value="D" type="radio" name="q2">
+            </div>
+            <label for="r2d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q3" class="question-box box-hide">
+        <h1 class="question-num">Câu 3</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r3a" value="A" type="radio" name="q3">
+            </div>
+            <label for="r3a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r3b" value="B" type="radio" name="q3">
+            </div>
+            <label for="r3b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r3c" value="C" type="radio" name="q3">
+            </div>
+            <label for="r3c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r3d" value="D" type="radio" name="q3">
+            </div>
+            <label for="r3d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q4" class="question-box box-hide">
+        <h1 class="question-num">Câu 4</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r4a" value="A" type="radio" name="q4">
+            </div>
+            <label for="r4a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r4b" value="B" type="radio" name="q4">
+            </div>
+            <label for="r4b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r4c" value="C" type="radio" name="q4">
+            </div>
+            <label for="r4c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r4d" value="D" type="radio" name="q4">
+            </div>
+            <label for="r4d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q5" class="question-box box-hide">
+        <h1 class="question-num">Câu 5</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-5ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r5a" value="A" type="radio" name="q5">
+            </div>
+            <label for="r5a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r5b" value="B" type="radio" name="q5">
+            </div>
+            <label for="r5b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r5c" value="C" type="radio" name="q5">
+            </div>
+            <label for="r5c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r5d" value="D" type="radio" name="q5">
+            </div>
+            <label for="r5d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q6" class="question-box box-hide">
+        <h1 class="question-num">Câu 6</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-6ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r6a" value="A" type="radio" name="q6">
+            </div>
+            <label for="r6a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r6b" value="B" type="radio" name="q6">
+            </div>
+            <label for="r6b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r6c" value="C" type="radio" name="q6">
+            </div>
+            <label for="r6c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r6d" value="D" type="radio" name="q6">
+            </div>
+            <label for="r6d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q7" class="question-box box-hide">
+        <h1 class="question-num">Câu 7</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-7ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r7a" value="A" type="radio" name="q7">
+            </div>
+            <label for="r7a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r7b" value="B" type="radio" name="q7">
+            </div>
+            <label for="r7b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r7c" value="C" type="radio" name="q7">
+            </div>
+            <label for="r7c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r7d" value="D" type="radio" name="q7">
+            </div>
+            <label for="r7d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q8" class="question-box box-hide">
+        <h1 class="question-num">Câu 8</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-8ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r8a" value="A" type="radio" name="q8">
+            </div>
+            <label for="r8a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r8b" value="B" type="radio" name="q8">
+            </div>
+            <label for="r8b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r8c" value="C" type="radio" name="q8">
+            </div>
+            <label for="r8c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r8d" value="D" type="radio" name="q8">
+            </div>
+            <label for="r8d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q9" class="question-box box-hide">
+        <h1 class="question-num">Câu 9</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-9ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r9a" value="A" type="radio" name="q9">
+            </div>
+            <label for="r9a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r9b" value="B" type="radio" name="q9">
+            </div>
+            <label for="r9b" class="lb">99</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r9c" value="C" type="radio" name="q9">
+            </div>
+            <label for="r9c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r9d" value="D" type="radio" name="q9">
+            </div>
+            <label for="r9d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q10" class="question-box box-hide">
+        <h1 class="question-num">Câu 10</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-10ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r10a" value="A" type="radio" name="q10">
+            </div>
+            <label for="r10a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r10b" value="B" type="radio" name="q10">
+            </div>
+            <label for="r10b" class="lb">1010</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r10c" value="C" type="radio" name="q10">
+            </div>
+            <label for="r10c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r10d" value="D" type="radio" name="q10">
+            </div>
+            <label for="r10d" class="lb">\(sin(x) \ne 2\)</label>
+          </div>
+        </div>
+      </div>
+      <div id="q11" class="question-box box-hide">
+        <h1 class="question-num">Câu 11</h1>
+        <p class="question">When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+          $$x = {-b \pm \sqrt{b^2-11ac} \over 2a}.$$
+        </p>
+        <hr>
+        <div class="answer">
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r11a" value="A" type="radio" name="q11">
+            </div>
+            <label for="r11a" class="lb">1</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r11b" value="B" type="radio" name="q11">
+            </div>
+            <label for="r11b" class="lb">1111</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r11c" value="C" type="radio" name="q11">
+            </div>
+            <label for="r11c" class="lb">\(sin(x)\)</label>
+          </div>
+          <div class="answer-item">
+            <div class="rd">
+              <input id="r11d" value="D" type="radio" name="q11">
+            </div>
+            <label for="r11d" class="lb">\(sin(x) \ne 2\)</label>
           </div>
         </div>
       </div>
       <hr>
       <div class="button-box">
         <div class="btn-control">
-          <button id="btn-next" class="btn btn-prev">Câu trước</button>
-          <button id="btn-prev" class="btn btn-next">Câu tiếp</button>
+          <button id="btn-prev" class="btn btn-prev">Câu trước</button>
+          <button id="btn-next" class="btn btn-next">Câu tiếp</button>
         </div>
-        <button id="btn-prev" class="btn btn-submit">Hoàn Thành</button>
+        <button id="btn-submit" class="btn btn-submit">Hoàn Thành</button>
+      </div>
+      <hr>
+      Bấm để chọn
+      <div class="answer-thumb">
+        <div class="answer-thumb-item q1">
+          <span class="answer-key">1</span>
+          <span id="a1"></span>
+        </div>
+        <div class="answer-thumb-item q2">
+          <span class="answer-key">2</span>
+          <span id="a2"></span>
+        </div>
+        <div class="answer-thumb-item q3">
+          <span class="answer-key">3</span>
+          <span id="a3"></span>
+        </div>
+        <div class="answer-thumb-item q4">
+          <span class="answer-key">4</span>
+          <span id="a4"></span>
+        </div>
+        <div class="answer-thumb-item q5">
+          <span class="answer-key">5</span>
+          <span id="a5"></span>
+        </div>
+        <div class="answer-thumb-item q6">
+          <span class="answer-key">6</span>
+          <span id="a6"></span>
+        </div>
+        <div class="answer-thumb-item q7">
+          <span class="answer-key">7</span>
+          <span id="a7"></span>
+        </div>
+        <div class="answer-thumb-item q8">
+          <span class="answer-key">8</span>
+          <span id="a8"></span>
+        </div>
+        <div class="answer-thumb-item q9">
+          <span class="answer-key">9</span>
+          <span id="a9"></span>
+        </div>
+        <div class="answer-thumb-item q10">
+          <span class="answer-key">10</span>
+          <span id="a10"></span>
+        </div>
+        <div class="answer-thumb-item q11">
+          <span class="answer-key">11</span>
+          <span id="a11"></span>
+        </div>
       </div>
     </div>
-  </form>
+    <div class="container-finish animation box-hide"></div>
+  </div>
 </body>
 
 </html>
