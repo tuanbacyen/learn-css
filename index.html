@@ -13,7 +13,9 @@
       LIST.push(key);
       ANSWER[key] = null;
     }
-    TIMER = parseInt("1") * 5;
+    random_answer(11);
+    TIMER = parseInt("10") * 60;
+    TOTAL_TIMER = parseInt("10") * 60;
   </script>
   <script src="script.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
@@ -22,7 +24,7 @@
 
 <body>
   <div class="container">
-    <div class="container-start animation">
+    <div class="container-start animation box-hide">
       <h1>Math</h1>
       <h1>Ma De</h1>
       <table class="table-start">
@@ -418,57 +420,86 @@
           <button id="btn-next" class="btn btn-next">Câu tiếp</button>
         </div>
         <button id="btn-submit" class="btn btn-submit">Hoàn Thành</button>
+        <button id="btn-result" class="btn btn-review box-hide">Xem kết quả</button>
       </div>
       <hr>
-      Bấm để chọn
-      <div class="answer-thumb">
-        <div class="answer-thumb-item q1">
-          <span class="answer-key">1</span>
-          <span id="a1"></span>
-        </div>
-        <div class="answer-thumb-item q2">
-          <span class="answer-key">2</span>
-          <span id="a2"></span>
-        </div>
-        <div class="answer-thumb-item q3">
-          <span class="answer-key">3</span>
-          <span id="a3"></span>
-        </div>
-        <div class="answer-thumb-item q4">
-          <span class="answer-key">4</span>
-          <span id="a4"></span>
-        </div>
-        <div class="answer-thumb-item q5">
-          <span class="answer-key">5</span>
-          <span id="a5"></span>
-        </div>
-        <div class="answer-thumb-item q6">
-          <span class="answer-key">6</span>
-          <span id="a6"></span>
-        </div>
-        <div class="answer-thumb-item q7">
-          <span class="answer-key">7</span>
-          <span id="a7"></span>
-        </div>
-        <div class="answer-thumb-item q8">
-          <span class="answer-key">8</span>
-          <span id="a8"></span>
-        </div>
-        <div class="answer-thumb-item q9">
-          <span class="answer-key">9</span>
-          <span id="a9"></span>
-        </div>
-        <div class="answer-thumb-item q10">
-          <span class="answer-key">10</span>
-          <span id="a10"></span>
-        </div>
-        <div class="answer-thumb-item q11">
-          <span class="answer-key">11</span>
-          <span id="a11"></span>
+      <div class="answer-question">
+        Bấm để chọn
+        <div class="answer-thumb">
+          <div class="answer-thumb-item q1">
+            <span class="answer-key">1</span>
+            <span id="a1"></span>
+          </div>
+          <div class="answer-thumb-item q2">
+            <span class="answer-key">2</span>
+            <span id="a2"></span>
+          </div>
+          <div class="answer-thumb-item q3">
+            <span class="answer-key">3</span>
+            <span id="a3"></span>
+          </div>
+          <div class="answer-thumb-item q4">
+            <span class="answer-key">4</span>
+            <span id="a4"></span>
+          </div>
+          <div class="answer-thumb-item q5">
+            <span class="answer-key">5</span>
+            <span id="a5"></span>
+          </div>
+          <div class="answer-thumb-item q6">
+            <span class="answer-key">6</span>
+            <span id="a6"></span>
+          </div>
+          <div class="answer-thumb-item q7">
+            <span class="answer-key">7</span>
+            <span id="a7"></span>
+          </div>
+          <div class="answer-thumb-item q8">
+            <span class="answer-key">8</span>
+            <span id="a8"></span>
+          </div>
+          <div class="answer-thumb-item q9">
+            <span class="answer-key">9</span>
+            <span id="a9"></span>
+          </div>
+          <div class="answer-thumb-item q10">
+            <span class="answer-key">10</span>
+            <span id="a10"></span>
+          </div>
+          <div class="answer-thumb-item q11">
+            <span class="answer-key">11</span>
+            <span id="a11"></span>
+          </div>
         </div>
       </div>
+      <div class="review-question-answer"></div>
     </div>
-    <div class="container-finish animation box-hide"></div>
+    <div class="container-finish animation box-hide">
+      <div class="body-finish">
+        <h1>Kết quả</h1>
+        <h1>Số điểm</h1>
+        <p>Bạn ngu vklll</p>
+        <div class="point">
+          <table class="table-result">
+            <tr>
+              <th>
+                <h3>Thời gian làm bài</h3>
+              </th>
+              <th>
+                <h3>Số câu đúng</h3>
+              </th>
+            </tr>
+            <tr>
+              <td id="time-doing">5:10</td>
+              <td id="point-result">20/50</td>
+            </tr>
+          </table>
+        </div>
+        <div class="review-answer"></div>
+        <button id="btn-review" class="btn btn-review">Xem lại bài thi</button>
+        <button id="btn-end" class="btn btn-end">Kết thúc</button>
+      </div>
+    </div>
   </div>
 </body>
 
