@@ -205,8 +205,10 @@ function showReviewResult(element) {
 
 function showResult() {
   const count_correct = Object.keys(resultExam().correct).length;
+  const point = (count_correct / LIST.length) * 10;
   showTime(TOTAL_TIMER - TIMER, '#time-doing');
-  $('#point-result').text(`${count_correct} / ${LIST.length}`)
+  $('#point').text(Math.round(point * 100) / 100);
+  $('#point-result').text(`${count_correct} / ${LIST.length}`);
   showReviewResult('.review-answer');
 }
 
